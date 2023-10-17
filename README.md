@@ -16,6 +16,8 @@ dooziedo/
     - tests/
         - unit/
             - ...
+    - README.md
+    - LICENSE
 ```
 
 ## File and Directory Naming Convention
