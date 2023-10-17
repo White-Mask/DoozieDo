@@ -52,5 +52,4 @@ jobs:
 
       - name: Test and Coverage
         run: |
-          pytest --cov=src --cov-report=xml --cov-report=term-missing
-          coverage xml
+          coverage run -m pytest -s && coverage report && coverage html && coverage xml -o coverage.xml
