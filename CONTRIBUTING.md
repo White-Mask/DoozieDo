@@ -10,7 +10,7 @@ Thank you for considering contributing to this project! Below, we provide inform
 ### Prerequisites
 
 ```shell
-python: "^>=10"
+python: ">=10"
 ```
 
 ### Setting up your local repo
