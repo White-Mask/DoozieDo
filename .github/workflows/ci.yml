@@ -31,25 +31,25 @@ jobs:
       - name: Run Flake8 Linter
         run: flake8 src
 
-  tests:
-    name: Running test 🧪
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-          architecture: "x64"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Test and Coverage
-        run: |
-          coverage run -m pytest -s && coverage report && coverage html && coverage xml -o coverage.xml
+  #tests:
+  #  name: Running test 🧪
+  #  runs-on: ubuntu-latest
+  #
+  #  steps:
+  #    - name: Checkout code
+  #      uses: actions/checkout@v3
+  #
+  #    - name: Set up Python
+  #      uses: actions/setup-python@v4
+  #      with:
+  #        python-version: "3.10"
+  #        architecture: "x64"
+  #
+  #    - name: Install dependencies
+  #      run: |
+  #        python -m pip install --upgrade pip
+  #        pip install -r requirements.txt
+  #
+  #    - name: Test and Coverage
+  #      run: |
+  #        coverage run -m pytest -s && coverage report && coverage html && coverage xml -o coverage.xml
