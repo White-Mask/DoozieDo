@@ -104,3 +104,7 @@ We use Git as our version control system to manage the development and versions 
 - Once your pull request has been approved, it will be merged into the `develop` branch.
 
 - Thank you for your contribution to the project. We hope you have a positive experience contributing with us.
+
+## Code of Conduct
+
+We are committed to providing a safe and welcoming environment for everyone. Please review our [Code of Conduct](CODE_OF_CONDUCT.md) to understand the expected behavior in our community.
