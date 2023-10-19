@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest an idea for this project
+description: Suggest an idea for this project. Fields are repeated because you need to write them both in English and Spanish / Los campos se repiten porque debes escribirlos en inglés y en español.
 title: "[Feature Request]: "
 labels: "enhancement"
 body:
