@@ -1,7 +1,7 @@
 import os
 import json
 
-from time import sleep
+import time
 
 
 def add_task(data):
@@ -103,28 +103,37 @@ Selecciona una opción:
 
 
 def create_project():
-    # Limpiar la pantalla
-    os.system("cls || clear")
+    # Debes ingresar el nombre del proyecto
+    # Pero si existe el proyecto debes volver a pedir el nombre
 
-    project_name = input("Ingresa el nombre del proyecto: ")
-    # Si en la carpeta 'DoozieDo' ('DoozieDo' es la carpeta raíz de este programa) no existe la carpeta 'projects' la crea
-    # Si ya existe la carpeta 'projects', solamente crea el archivo
+    while True:
+        # Limpiar la pantalla
+        os.system("cls || clear")
 
-    # Si no existe la carpeta 'projects' la crea
-    if not os.path.exists("projects"):
-        os.makedirs("projects")
+        # Pedir el nombre del proyecto o volver al menú principal
+        print(
+            "Ingresa el nombre del proyecto o presiona ENTER para volver al menú principal"
+        )
+        project_name = input("Nombre del proyecto: ")
 
-    # Si no existe el archivo 'projects.json' lo crea
-    if not os.path.exists(f"projects/{project_name}.json"):
-        with open(f"projects/{project_name}.json", "w") as file:
-            new_schema = {
-                "project_name": project_name,
-                "tasks": [],
-                "completed_tasks": [],
-            }
-            # new_schema es un diccionario y hay que convertirlo a un string para poder escribirlo en el archivo
-            json.dump(new_schema, file)
-        file.close()
+        if project_name == "":
+            return
+
+        # Si ya existe el proyecto, volver a pedir el nombre
+        if not os.path.exists(f"projects/{project_name}.json"):
+            break
+        else:
+            print("El proyecto ya existe...")
+            time.sleep(2)
+
+    # Crear el archivo del proyecto
+    with open(f"projects/{project_name}.json", "w") as file:
+        data = {"project_name": project_name, "tasks": [], "completed_tasks": []}
+        json.dump(data, file)
+    file.close()
+    print(f"Proyecto {project_name} creado correctamente")
+    time.sleep(2)
+    interate_projects(data)
 
 
 def initialize_project(list_projects):
