@@ -114,11 +114,13 @@ def create_project():
         os.system("cls || clear")
 
         # Pedir el nombre del proyecto o volver al menú principal
-        print("""
+        print(
+            """
 Crear un nuevo proyecto:
 1. Ingresa el nombre del proyecto
 2. Presiona ENTER para volver al menú principal
-""")
+"""
+        )
         project_name = input(" > ")
 
         if project_name == "":
@@ -143,11 +145,13 @@ Crear un nuevo proyecto:
 
 def initialize_project(list_projects):
     while True:
-        print("""
+        print(
+            """
 Iniciar un proyecto:
  * Ingresa el número del proyecto que deseas iniciar
  * Presiona ENTER para volver al menú principal
-""")
+"""
+        )
         option = input("> ")
 
         if option == "":
@@ -168,6 +172,7 @@ Iniciar un proyecto:
             print("Ha ocurrido un error")
 
     return json.loads(text)
+
 
 def show_projects():
     # Limpiar la pantalla
